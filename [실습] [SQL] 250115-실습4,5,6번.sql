@@ -49,7 +49,7 @@ ORDER BY "거래 월";
 
 -- 각 지점에서 승인된 대출(APPROVED)의 평균 대출 금액과 총 대출 금액을 계산하시오.
 SELECT BRANCH_ID AS "지점",
-    ROUND(AVG(AMOUNT), 2) AS "평균 대출 금액",
+    AVG(AMOUNT) AS "평균 대출 금액",
     SUM(AMOUNT) AS "총 대출 금액"
 FROM LOANS
 WHERE STATUS = 'APPROVED'
