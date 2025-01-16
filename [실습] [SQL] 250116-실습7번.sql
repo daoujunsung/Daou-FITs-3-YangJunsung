@@ -1,9 +1,8 @@
 -- 각 지점의 이름과 대출 신청 고객의 정보를 출력하시오.(대출 신청이 없는 지점도 포함)
-SELECT B.NAME BRANCH_NAME, L.*
+SELECT B.NAME BRANCH_NAME, L.CUSTOMER_ID, L.AMOUNT
 FROM BRANCHES B
     LEFT OUTER JOIN LOANS L
-    ON B.BRANCH_ID = L.BRANCH_ID
-ORDER BY B.NAME;
+    ON B.BRANCH_ID = L.BRANCH_ID;
 
 -- 잔액이 50,000 이상인 계좌를 가진 고객의 이름과 이메일을 출력하시오.
 SELECT C.NAME, C.EMAIL
