@@ -1,4 +1,4 @@
--- 각 지점의 이름과 대출 신청 고객의 정보를 출력하시오.(대출 신청이 없는 지점도 포함)
+-- 각 지점의 이름과 대출 신청 고객의 아이디와 금액을 출력하시오.(대출 신청이 없는 지점도 포함)
 SELECT B.NAME BRANCH_NAME, L.CUSTOMER_ID, L.AMOUNT
 FROM BRANCHES B
     LEFT OUTER JOIN LOANS L
