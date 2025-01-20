@@ -1,0 +1,30 @@
+-- 지점 이름이 'Location 1'에 해당하는 지점에서 대출을 받은 고객의 이름을 출력하시오.
+SELECT NAME
+FROM CUSTOMERS
+WHERE CUSTOMER_ID IN (
+    SELECT CUSTOMER_ID
+    FROM LOANS
+    WHERE BRANCH_ID IN (
+        SELECT BRANCH_ID
+        FROM BRANCHES
+        WHERE LOCATION = 'Location 1'
+    )
+);
+
+-- 특정 고객(CUSTOMER_ID = 100)이 소유한 모든 계좌에서 발생한 거래를 출력하시오.
+SELECT *
+FROM TRANSACTIONS
+WHERE ACCOUNT_ID IN (
+    SELECT ACCOUNT_ID
+    FROM ACCOUNTS
+    WHERE CUSTOMER_ID = 100
+);
+
+-- 각 고객이 보유한 계좌 중 가장 높은 잔액을 가진 계좌를 조회하시오.
+SELECT *
+FROM ACCOUNTS
+WHERE (CUSTOMER_ID, BALANCE) IN (
+    SELECT CUSTOMER_ID, MAX(BALANCE)
+    FROM ACCOUNTS
+    GROUP BY CUSTOMER_ID
+)
