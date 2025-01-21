@@ -26,10 +26,8 @@ WHERE STATUS = 'APPROVED';
 
 -- 계좌 테이블에서 고객별 평균 잔액을 계산하시오.
 -- (반올림하여 소수점 둘째 자리까지 출력)
+-- 계좌 테이블에서 고객별 평균 잔액을 계산하시오.
+-- (반올림하여 소수점 둘째 자리까지 출력)
 SELECT CUSTOMER_ID, BALANCE, 
-    ROUND(
-        AVG(BALANCE) OVER (
-            PARTITION BY CUSTOMER_ID
-        )
-    ,2) AVG_BALANCE 
+    ROUND(AVG(BALANCE) OVER (PARTITION BY CUSTOMER_ID),2) AVG_BALANCE 
 FROM ACCOUNTS;
