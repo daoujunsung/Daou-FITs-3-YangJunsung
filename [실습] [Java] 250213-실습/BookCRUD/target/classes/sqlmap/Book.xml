@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="bookcrud.MyBook">
+    <select id="selectByTitle" parameterType="String" resultType="Book">
+        <![CDATA[
+            SELECT bisbn, btitle, bprice, bauthor
+            FROM book
+            WHERE btitle LIKE '%' || #{btitle} || '%'
+        ]]>
+    </select>
+
+    <insert id="insertBook" parameterType="Book">
+        <![CDATA[
+            INSERT INTO Book (bisbn, btitle, bprice, bauthor)
+            VALUES (#{bisbn}, #{btitle}, #{bprice}, #{bauthor})
+        ]]>
+    </insert>
+
+    <update id="updateBook" parameterType="Book">
+        <![CDATA[
+            UPDATE Book
+            SET btitle = #{btitle}, bprice = #{bprice}, bauthor = #{bauthor}
+            WHERE bisbn = #{bisbn}
+        ]]>
+    </update>
+
+    <delete id="deleteBook" parameterType="String">
+        <![CDATA[
+            DELETE FROM Book WHERE bisbn = #{bisbn}
+        ]]>
+    </delete>
+</mapper>
