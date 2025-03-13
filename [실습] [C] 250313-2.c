@@ -12,13 +12,13 @@ int main() {
 	int arr[3][3] = { {0,1,2},{3,4,5},{6,7,8} };
 	operation2 operations[4] = { printArrSum, printArrMax,printArrMin, printArrSquared };
 	do {
-		printf("¿¬»ê ¹æ¹ıÀ» ¼±ÅÃÇÏ±â\n(0: ÇÕ, 1 : ÃÖ´ë°ª, 2 : ÃÖ¼Ò°ª, 3 : Á¦°ö, 4: Áß´Ü) : ");
+		printf("ì—°ì‚° ë°©ë²•ì„ ì„ íƒí•˜ê¸°\n(0: í•©, 1 : ìµœëŒ€ê°’, 2 : ìµœì†Œê°’, 3 : ì œê³±, 4: ì¤‘ë‹¨) : ");
 		scanf_s("%d", &choice);
 
 		if (choice < 0 || choice > 4) {
-			printf("Àß¸øµÈ ¼±ÅÃÀÔ´Ï´Ù.\n");
+			printf("ì˜ëª»ëœ ì„ íƒì…ë‹ˆë‹¤.\n");
 		}
-		else if (choice == 4) printf("Á¾·áÇÕ´Ï´Ù.\n");
+		else if (choice == 4) printf("ì¢…ë£Œí•©ë‹ˆë‹¤.\n");
 		else {
 			operations[choice](arr);
 		}
@@ -34,7 +34,7 @@ void printArrSum(int arr[3][3]) {
 			sum += *(*(arr + i) + j);
 		}
 	}
-	printf("¹è¿­ÀÇ ÇÕÀº %d\n\n", sum);
+	printf("ë°°ì—´ì˜ í•©ì€ %d\n\n", sum);
 }
 
 void printArrMax(int arr[3][3]) {
@@ -44,7 +44,7 @@ void printArrMax(int arr[3][3]) {
 			if (*(*(arr + i) + j) > max) max = *(*(arr + i) + j);
 		}
 	}
-	printf("¹è¿­ÀÇ ÃÖ´ë°ªÀº %d\n\n", max);
+	printf("ë°°ì—´ì˜ ìµœëŒ€ê°’ì€ %d\n\n", max);
 }
 
 void printArrMin(int arr[3][3]) {
@@ -54,11 +54,11 @@ void printArrMin(int arr[3][3]) {
 			if (*(*(arr + i) + j) < min) min = *(*(arr + i) + j);
 		}
 	}
-	printf("¹è¿­ÀÇ ÃÖ¼Ò°ªÀº %d\n\n", min);
+	printf("ë°°ì—´ì˜ ìµœì†Œê°’ì€ %d\n\n", min);
 }
 
 void printArrSquared(int arr[3][3]) {
-	printf("¹è¿­ÀÇ Á¦°ö°ªÀº\n");
+	printf("ë°°ì—´ì˜ ì œê³±ê°’ì€\n");
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			printf("%d ", (*(*(arr + i) + j)) * (*(*(arr + i) + j)));
