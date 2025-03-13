@@ -6,20 +6,20 @@ int min(int, int);
 int main() {
 	int (*fpmm) (int, int);
 	int num1, num2, flag;
-	printf("µÎ °³ÀÇ ¼ıÀÚ¸¦ ÀÔ·Â:");
+	printf("ë‘ ê°œì˜ ìˆ«ìë¥¼ ì…ë ¥:");
 	scanf_s("%d %d", &num1, &num2);
-	printf("¿øÇÏ´Â °ªÀ» ÀÔ·Â(1:Å«°ª, 2:ÀÛÀº°ª):");
+	printf("ì›í•˜ëŠ” ê°’ì„ ì…ë ¥(1:í°ê°’, 2:ì‘ì€ê°’):");
 	scanf_s("%d", &flag);
 	if (flag == 1) {
 		fpmm = max;
-		printf("µÎ ¼ö Áß Å« °ªÀº %d\n", fpmm(num1, num2));
+		printf("ë‘ ìˆ˜ ì¤‘ í° ê°’ì€ %d\n", fpmm(num1, num2));
 	}
 	else if (flag == 2) {
 		fpmm = min;
-		printf("µÎ ¼ö Áß ÀÛÀº °ªÀº %d\n", fpmm(num1, num2));
+		printf("ë‘ ìˆ˜ ì¤‘ ì‘ì€ ê°’ì€ %d\n", fpmm(num1, num2));
 	}
 	else {
-		printf("Àß¸øµÈ ¼ıÀÚ ÀÔ·ÂÀÔ´Ï´Ù.\n");
+		printf("ì˜ëª»ëœ ìˆ«ì ì…ë ¥ì…ë‹ˆë‹¤.\n");
 	}
 }
 
