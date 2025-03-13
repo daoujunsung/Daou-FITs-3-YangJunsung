@@ -38,7 +38,7 @@ void printArrSum(int arr[3][3]) {
 }
 
 void printArrMax(int arr[3][3]) {
-	int max = -999;
+	int max = **arr;
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			if (*(*(arr + i) + j) > max) max = *(*(arr + i) + j);
@@ -48,7 +48,7 @@ void printArrMax(int arr[3][3]) {
 }
 
 void printArrMin(int arr[3][3]) {
-	int min = 999;
+	int min = **arr;
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			if (*(*(arr + i) + j) < min) min = *(*(arr + i) + j);
