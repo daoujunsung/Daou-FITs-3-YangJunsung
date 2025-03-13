@@ -3,7 +3,7 @@
 
 int main() {
 	int rowNum, colNum, delRow;
-	printf("Çà°ú ¿­ÀÇ ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä: ");
+	printf("í–‰ê³¼ ì—´ì˜ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”: ");
 	scanf_s("%d %d", &rowNum, &colNum);
 	int arr[5][5];
 	for (int i = 0; i < rowNum; i++) {
@@ -13,7 +13,7 @@ int main() {
 		}
 		printf("\n");
 	}
-	printf("»èÁ¦ÇÏ·Á´Â ÇàÀÇ ÀÎµ¦½º ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä? ");
+	printf("ì‚­ì œí•˜ë ¤ëŠ” í–‰ì˜ ì¸ë±ìŠ¤ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”? ");
 	scanf_s("%d", &delRow);
 
 	for (int i = delRow; i < rowNum - 1; i++) {
@@ -26,8 +26,8 @@ int main() {
 		arr[rowNum - 1][j] = 0;
 	}
 
-	// ¼öÁ¤µÈ ¹è¿­ Ãâ·Â
-	printf("¼öÁ¤µÈ ¹è¿­ Ãâ·Â\n");
+	// ìˆ˜ì •ëœ ë°°ì—´ ì¶œë ¥
+	printf("ìˆ˜ì •ëœ ë°°ì—´ ì¶œë ¥\n");
 	for (int i = 0; i < rowNum-1; i++) {
 		for (int j = 0; j < colNum; j++) {
 			printf("%2d ", arr[i][j]);
